@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styl.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_ho.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_ho.css') }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <title>prediction Page</title>
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+
+
+    <div class="hero_area">
+        <div class="bg-box">
+          <img src=" {{url_for('static', filename=('images/food 2.jpg')) }} " alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+          <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="/">
+                <span>
+                  PREDICTION PAGE
+                </span>
+              </a>
+    
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""> </span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mx-auto ">
+                    <!--
+
+                   <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="book.html">Book Table</a>
+                  </li> -->
+                </ul>
+
+                <div class="user_option"> 
+
+                  
+                <li class="nav-item active">
+                      <a class="user_link active" href="/"> <i class="fa fa-user" aria-hidden="true"></i> Home </a>
+                </li>  
+                  <a href="/predictdata" class="order_online">
+                    Predict
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+        <section class="slider_section ">
+          <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                        <h1>
+                          Welcome..!
+                        </h1>
+                        <p>
+                            In addition, both movements of food and money are facilitated by “pulls” and “pushes.” In a food
+                            supply chain, producers and processors push or supply food and consumers pull or demand food
+                            thereby facilitating the dominoes (food) to fall (move) towards the consumers.
+                        </p>
+                        <div class="btn-box">
+                          <a href="/" class="btn1">
+                             HOME
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item ">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                        <h1>
+                            Processing
+                        </h1>
+                        <p>
+                            food moves from producer to consumer via the processes of production,
+                            processing, distribution, retailing and consumption; thus, food moves from farmer to consumer in a
+                            domino‐like fashion
+                        </p>
+                        <div class="btn-box">
+                          <a href="/" class="btn1">
+                            HOME
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                        <h1>
+                            supply chain 
+                        </h1>
+                        <p>
+                          Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                        </p>
+                        <div class="btn-box">
+                          <a href="/" class="btn1">
+                            HOME
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <ol class="carousel-indicators">
+                <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#customCarousel1" data-slide-to="1"></li>
+                <li data-target="#customCarousel1" data-slide-to="2"></li>
+              </ol>
+            </div>
+          </div>
+    
+        </section>
+        <!-- end slider section -->
+      </div>
+
+
+
+   <div style="display: flex;justify-content: center;">
+    <div >
+      <div class="container pred" >
+        <h1>PREDICTION</h1>
+    
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+           
+            
+            <div class="form-group">
+                <label for="writing-score">Enter the weeks you want to predict</label>
+                <input id="writing-score" type="number" name="data" placeholder="##" min="0" max="100" />
+            </div>
+            
+            <div class="form-group" style="text-align:center; ">
+                <input class="btn-primary btn" style="border: none;border-radius: 5px;" type="submit" value="Predict" required />
+            </div>
+        </form>
+        {% if results %}
+        <h2 >
+            The prediction for " {{results}} " weeks
+        </h2>
+        {% endif %}
+
+        <div class="form-group" ><h2  style="font-size: 20px;" > Show chart in full page <a href="/show" style="text-align:center;text-decoration:none ; color: yellowgreen;">..Click Here! </a></h2>  </div>
+	
+    </div>
+	
+	
+	
+    </div>
+   </div>
+
+    <div>
+        
+        {% if plot_html %}
+        {{ plot_html | safe }}
+        {% endif %}
+    </div>
+
+    <div class="row footer bg-light">
+      <div class="col">
+        <p class="text-center">Follow us: <a class="social-icon" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a> <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></p>
+      </div>
+      <div class="col">
+        <p class="text-center">Copyright &copy; 2024</p>
+      </div>
+      <div class="col">
+        <p class="text-center">Powered by: <a href="#">GTS</a></p>
+      </div>
+
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+      <script type="text/javascript" src="js/map.js"></script>
+      <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  
+      <script type="text/javascript" src="js/smooth-scroll.js"></script>
+      <script src="{{ url_for('static', filename='js/smooth-scroll.js') }}"></script>
+  
+      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  
+      <script type="text/javascript" src="js/image-effect.js"></script>
+      <script src="{{ url_for('static', filename='js/image-effect.js') }}"></script>
+      
+  
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFZjOV0KA68G2YAh-rn7I3qKqCQEh_Ja0&callback=myMap">
+        </script>
+
+        <style>
+          .btn-primary:hover{
+
+            background-color: rgb(8, 134, 92);
+          }
+          .pred{
+            margin-top: 70px;
+            background-color: rgb(0, 122, 61);
+            padding: 33px;border-radius: 10px;
+
+          }
+          .pred:hover{
+            background: rgb(0, 92, 5);
+
+          }
+          .btn{
+            width: 170px;
+            padding-left:10px;
+
+            padding-right: 10px;
+          }
+        </style>
+</body>
+</html>
+
+<!--
+<div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ethnicity">Race or Ethnicity</label>
+                <select id="ethnicity" name="ethnicity" required>
+                    <option value="" disabled selected>Select Ethnicity</option>
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group E">Group E</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="parent-education">Parental Level of Education</label>
+                <select id="parent-education" name="parental_level_of_education" required>
+                    <option value="" disabled selected>Select Parent Education</option>
+                    <option value="associate's degree">Associate's Degree</option>
+                    <option value="bachelor's degree">Bachelor's Degree</option>
+                    <option value="high school">High School</option>
+                    <option value="master's degree">Master's Degree</option>
+                    <option value="some college">Some College</option>
+                    <option value="some high school">Some High School</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="lunch">Lunch Type</label>
+                <select id="lunch" name="lunch" required>
+                    <option value="" disabled selected>Select Lunch Type</option>
+                    <option value="free/reduced">Free/Reduced</option>
+                    <option value="standard">Standard</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="test-course">Test Preparation Course</label>
+                <select id="test-course" name="test_preparation_course" required>
+                    <option value="" disabled selected>Select Test Course</option>
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="reading-score">Writing Score out of 100</label>
+                <input id="reading-score" type="number" name="reading_score" placeholder="Enter your Reading score" min="0" max="100" />
+            </div>
+
+
+                <nav class="menu-bar">
+        <ul>
+            <li><a href="/">Home</a></li>
+
+        </ul>
+    </nav>

@@ -1,0 +1,324 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styl.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_ho.css') }}">
+
+
+		<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    	<title>Food demand prediction </title>
+    	<link rel="icon" href="images/logo.png">
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+		<div class="hero_area">
+			<div class="bg-box">
+			  <img src=" {{url_for('static', filename=('images/food 3.jpg')) }} " alt="">
+			</div>
+			<!-- header section strats -->
+			<header class="header_section">
+			  <div class="container">
+				<nav class="navbar navbar-expand-lg custom_nav-container ">
+				  <a class="navbar-brand" href="/">
+					<span>
+					  FDSC FINSHELL PRODECTS 
+					</span>
+				  </a>
+		
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class=""> </span>
+				  </button>
+		
+				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav  mx-auto ">
+						<!--
+
+					   <li class="nav-item">
+						<a class="nav-link" href="menu.html">Menu</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="book.html">Book Table</a>
+					  </li> -->
+					</ul>
+
+					<div class="user_option"> 
+
+					  
+					<li class="nav-item active">
+					  	<a class="user_link active" href="/"> <i class="fa fa-user" aria-hidden="true"></i> Home </a>
+					</li>  
+					  <a href="/predictdata" class="order_online">
+						Predict
+					  </a>
+					</div>
+				  </div>
+				</nav>
+			  </div>
+			</header>
+			<!-- end header section -->
+			<!-- slider section -->
+			<section class="slider_section ">
+			  <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<div class="container ">
+					  <div class="row">
+						<div class="col-md-7 col-lg-6 ">
+						  <div class="detail-box">
+							<h1>
+							  Welcome..!
+							</h1>
+							<p>
+								In addition, both movements of food and money are facilitated by “pulls” and “pushes.” In a food
+								supply chain, producers and processors push or supply food and consumers pull or demand food
+								thereby facilitating the dominoes (food) to fall (move) towards the consumers.
+							</p>
+							<div class="btn-box">
+							  <a href="/predictdata" class="btn1">
+								PREDICTION PAGE
+							  </a>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="carousel-item ">
+					<div class="container ">
+					  <div class="row">
+						<div class="col-md-7 col-lg-6 ">
+						  <div class="detail-box">
+							<h1>
+								Processing
+							</h1>
+							<p>
+								food moves from producer to consumer via the processes of production,
+								processing, distribution, retailing and consumption; thus, food moves from farmer to consumer in a
+								domino‐like fashion
+							</p>
+							<div class="btn-box">
+							  <a href="/predictdata" class="btn1">
+								PREDICTION PAGE
+							  </a>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <div class="carousel-item">
+					<div class="container ">
+					  <div class="row">
+						<div class="col-md-7 col-lg-6 ">
+						  <div class="detail-box">
+							<h1>
+								supply chain 
+							</h1>
+							<p>
+							  Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+							</p>
+							<div class="btn-box">
+							  <a href="/predictdata" class="btn1">
+								PREDICTION PAGE
+							  </a>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<div class="container">
+				  <ol class="carousel-indicators">
+					<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+					<li data-target="#customCarousel1" data-slide-to="1"></li>
+					<li data-target="#customCarousel1" data-slide-to="2"></li>
+				  </ol>
+				</div>
+			  </div>
+		
+			</section>
+			<!-- end slider section -->
+		  </div>
+	  
+
+
+
+			<!--- Restaurant-->
+		<div class="container">
+		 	<div class="row" id="Restaurant">
+	    		<div class="col navMenu">
+	     		 	<h2 class="text-center" >~ Restaurant ~</h2>
+	    		</div>
+  			</div>
+  			<div class="row bg-light" >
+  				<div class="col-md-6">
+  					<h3>Location</h3>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  					<h5>A Unique Experience</h5>
+  					<p>Thanks for stopping by. We are the last authentic Italian restaurant in Milan, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  				</div>
+  				<div class="col-md-6" data-aos="fade-up">
+  					<img class="img-fluid" src=" {{ url_for('static', filename='images/location.jpg') }}">
+  				</div>
+  			</div>
+  			<div class="row bg-light"><br></div>
+  			<div class="row bg-light">
+  				<div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
+  					<img class="img-fluid "  src=" {{ url_for('static', filename='images/cuisine.jpg') }}">
+  				</div>
+  				<div class="col-md-6 order-md-12 order-1">
+  					<h3>Cuisine</h3>
+  					<p>Thanks for stopping by. We are the last authentic Our restaurant in Chennai, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  					<h5>A Unique Experience</h5>
+  					<p>Thanks for stopping by. We are the last authentic Our restaurant in Chennai, serving delicious Italian cuisine cooked by the best chefs. It only takes a few minutes to browse through our website and check out our menu. We hope you'll soon join us for a superb Italian culinary experience.</p>
+  				</div>
+  			</div>
+  			<!--- End of Restaurant -->
+  			<!--- Start of Menu-->
+			<div class="row" id="Menu">
+				<div class="col navMenu">
+	     		 	<h2 class="text-center" >~ Menu ~</h2>
+				</div>
+			</div>
+			<div class="row bg-light">
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card view zoom">
+  						<img class="card-img-top img-fluid "  src=" {{ url_for('static', filename='images/meat-menu.jpg') }}">
+					  	<div class="card-body">
+					  		<h5 class="card-title">~ Meat Products ~</h5>
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
+							    <li class="list-group-item">Bruschette con maiale al curry</li>
+							 	<li class="list-group-item">Uova al prosciutto</li>
+							 	<li class="list-group-item">Vitello tonnato</li>
+							 	<li class="list-group-item">Fesa di tacchino marinata con olive</li>
+							</ul>
+					  	</div>
+					</div>
+				</div>
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card">
+  						<img class="card-img-top img-fluid "  src=" {{ url_for('static', filename='images/fish-menu.jpg') }}">
+					  	<div class="card-body">
+					  		<h5 class="card-title">~ Fish Products ~</h5>
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">Carpaccio di polpo</li>
+							    <li class="list-group-item">Cozze al verde</li>
+							 	<li class="list-group-item">Cocktail di gamberi</li>
+							 	<li class="list-group-item">Risotto alla crema di scampi</li>
+							 	<li class="list-group-item">Ravioli di pesce con crema di scampi</li>
+							</ul>
+					  	</div>
+					</div>
+				</div>
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card">
+  						<img class="card-img-top img-fluid"   src=" {{ url_for('static', filename='images/menu-vegetarian.jpg') }}">
+					  	<div class="card-body">
+					  		<h5 class="card-title">~ Vegetarian Products ~</h5>
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">Parmigiana di melanzane</li>
+							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
+							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
+							 	<li class="list-group-item">Frittata di patate al forno</li>
+							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							</ul>
+					  	</div>
+					</div>
+				</div>
+			</div>
+			<!--- End of Menu -->
+
+			<!--- Start of Our Location -->
+			<div class="row" id="OurLocation">
+				<div class="col navMenu">
+					<h2 class="text-center">~ Our Location ~</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div id="googleMap" class="col-md-9 map"></div>
+				<div class="col-md-3">
+					<h3>Address:</h3>
+					<p>Chennai - 600000</p>
+					<h3>Email:</h3>
+					<p>chennai@mail.com</p>
+				</div>
+				
+
+
+			</div>
+			<!--- End of Our Location -->
+			<div class="row footer bg-light">
+				<div class="col">
+					<p class="text-center">Follow us: <a class="social-icon" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a> <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></p>
+				</div>
+				<div class="col">
+					<p class="text-center">Copyright &copy; 2024</p>
+				</div>
+				<div class="col">
+					<p class="text-center">Powered by: <a href="#">GTS</a></p>
+				</div>
+			</div>
+		</div>
+		<footer class="container" style="display: block;">
+			<div class= "row only-mobile">
+				<div class="col-6">
+					<a class="btn btn-primary btn-block text-center" href="tel:++390000000"><i class="fa fa-phone" aria-hidden="true"></i> Call</a>
+				</div>
+				<div class="col-6">
+					<a class="btn btn-success btn-block text-center" href="https://api.whatsapp.com/send?phone=+390000000"><i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
+				</div>
+			</div>
+		</footer>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+		<script type="text/javascript" src="js/map.js"></script>
+		<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+
+		<script type="text/javascript" src="js/smooth-scroll.js"></script>
+		<script src="{{ url_for('static', filename='js/smooth-scroll.js') }}"></script>
+
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+		<script type="text/javascript" src="js/image-effect.js"></script>
+		<script src="{{ url_for('static', filename='js/image-effect.js') }}"></script>
+		
+
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFZjOV0KA68G2YAh-rn7I3qKqCQEh_Ja0&callback=myMap">
+	    </script>
+
+ <script>
+	function myMap() {
+	var mapProp= {
+	  center:new google.maps.LatLng(13.041673863527596, 80.2339330970405),
+	  zoom:5,
+	};
+	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+	</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+	
+	
+  	</body>
+</html>
+
