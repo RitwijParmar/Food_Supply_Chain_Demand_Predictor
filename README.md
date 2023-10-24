@@ -56,6 +56,7 @@ The Food Supply Chain Demand Predictor is a Flask web application designed to fo
 
 ## Code Explanation
 ### Loading Pre-trained Models
+
 These lines load pre-trained SARIMA and ARIMA models using `joblib`.
 
 ### Defining Routes
@@ -63,10 +64,12 @@ These lines load pre-trained SARIMA and ARIMA models using `joblib`.
 #### Index Route
 This defines the root route (`/`) which renders the `index.html` template.
 
+#### Prediction Route
+This route (`/predictdata`) handles both GET and POST requests:
+- **GET**: Renders `home.html`.
+- **POST**: Reads user input from a form, loads training data, makes forecasts, creates DataFrames for the forecasts, merges the forecasts, creates a Plotly line plot, saves the plot as an HTML file, and returns the plot embedded in `home.html`.
+
 #### Show Route
 This route (`/show`) renders the `forecast_plot.html` template.
 
-### Running the Flask Application
 
-
-This runs the Flask application with debug mode enabled.
