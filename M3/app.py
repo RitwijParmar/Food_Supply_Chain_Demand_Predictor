@@ -49,9 +49,13 @@ def predict_datapoint():
             'Predicted_ARIMA': arima_predicted_values
         })
 
+        sarima_forecast_df = pd.DataFrame({
+            'weeks': range(140, 140 + forecast_steps),
+            'Predicted_SARIMA': sarima_predicted_values
+        })
 
         # Merge DataFrames on the 'weeks' column
-        combined_forecast_df = pd.merge(arima_forecast_df, on='weeks')
+        combined_forecast_df = pd.merge(arima_forecast_df, sarima_forecast_df, on='weeks')
 
 
         
@@ -65,10 +69,6 @@ def predict_datapoint():
 # Add actual predictions from the test DataFrame with a different color
         fig.add_trace(px.line(test, x='week', y='num_orders', color_discrete_map={'num_orders': 'orange'}).data[0])
 
-
-
-        
-            
         # Show the plot
         html_file_path = "./templates/forecast_plot.html"
         pyo.plot(fig, filename=html_file_path, auto_open=False)
